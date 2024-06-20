@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { type_second } from "@/functions/fonts";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={type_second.variable}>
-        <Header />
-        {children}
+        <div className="App">
+          <Header />
+          <main className="AppBody">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
