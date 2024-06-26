@@ -27,8 +27,6 @@ export default async function login(state: {}, formData: FormData) {
 
     return { data: null, ok: true, error: "" };
   } catch (error: unknown) {
-    if (error instanceof Error) {
-      return apiError(error);
-    }
+    return apiError(error);
   }
 }
